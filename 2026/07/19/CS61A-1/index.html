@@ -14,7 +14,7 @@
 <meta property="og:description" content="Homework1 :Function,Controlquestion ：1，2 Q1：a加上绝对值b    def a_plus_abs_b(a, b):    “””Return a+abs(b), but without calling abs. &gt;&gt;&gt; a_plus_abs_b(2, 3) 5 &gt;&gt;&gt; a_plus_abs_b(2, -3) 5 &gt;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-19T12:30:36.000Z">
-<meta property="article:modified_time" content="2026-07-19T13:12:27.867Z">
+<meta property="article:modified_time" content="2026-07-19T13:19:07.212Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -138,8 +138,23 @@ return i*i+j*j+k*k-max(i,j,k)*max(i,j,k)
 &gt;&gt;&gt; welcome()
 </code></pre>
 <p>答案：<br>(line 1)? GO<br>(line 2)? ‘hello’<br>首先print直接打印 字符串Go,<br>而在交互终端，交互器会把函数返回值打印出来，所以还有原封不动的’hello’</p>
-<p>Q: In the following traceback, what is the most recent function call?<br>    Traceback (most recent call last):<br>    File “temp.py”, line 10, in <module><br>        f(“hi”)<br>    File “temp.py”, line 2, in f<br>        return g(x + x, x)<br>    File “temp.py”, line 5, in g<br>        return h(x + y * 5)<br>    File “temp.py”, line 8, in h<br>        return x + 0<br>    TypeError: must be str, not int<br>    Choose the number of the correct choice:<br>    1) f(“hi”)<br>    2) h(x + y * 5)<br>    3) g(x + x, x)<br>答案为 1<br>Traceback (most recent call last)<br>回溯信息（最后调用的函数放在末尾），可以认为回溯信息记录了整个调用流程</p>
-<p>debugging-quiz &gt; Suite 1 &gt; Case 2<br>(cases remaining: 6)</p>
+<pre><code>Q: In the following traceback, what is the most recent function call?
+Traceback (most recent call last):
+File &quot;temp.py&quot;, line 10, in &lt;module&gt;
+    f(&quot;hi&quot;)
+File &quot;temp.py&quot;, line 2, in f
+    return g(x + x, x)
+File &quot;temp.py&quot;, line 5, in g
+    return h(x + y * 5)
+File &quot;temp.py&quot;, line 8, in h
+    return x + 0
+TypeError: must be str, not int
+Choose the number of the correct choice:
+1) f(&quot;hi&quot;)
+2) h(x + y * 5)
+3) g(x + x, x)
+</code></pre>
+<p>答案为 1<br>Traceback (most recent call last)<br>回溯信息（最后调用的函数放在末尾），可以认为回溯信息记录了整个调用流程</p>
 <pre><code>Q: In the following traceback, what is the cause of this error?
 Traceback (most recent call last):
 File &quot;temp.py&quot;, line 10, in &lt;module&gt;
@@ -152,22 +167,22 @@ File &quot;temp.py&quot;, line 8, in h
     return x + 0
 TypeError: must be str, not int
 Choose the number of the correct choice:
-0) there was a missing return statement
-1) the code looped infinitely
-2) the code attempted to add a string to an integer
+1) there was a missing return statement
+2) the code looped infinitely
+3) the code attempted to add a string to an integer
 </code></pre>
 <p>答案为2</p>
 <pre><code>Q: Which of the following is NOT true?
 Choose the number of the correct choice:
-3) It is generally good practice to release code with assertion statements left in
+1) It is generally good practice to release code with assertion statements left in
    发布代码时保留断言语句通常是良好的编程习惯
-4) Debugging is not a substitute for testing
+2) Debugging is not a substitute for testing
    调试不能替代测试
-5) Code that returns a wrong answer instead of crashing is generally better as it at least works fine
+3) Code that returns a wrong answer instead of crashing is generally better as it at least works fine
    代码返回错误答案而非直接崩溃一般更好，因为它至少能正常运行
-6) Testing is very important to ensure robust code
+4) Testing is very important to ensure robust code
    测试对于保障代码健壮性非常重要
-7) It is generally bad practice to release code with debugging print statements left in
+5) It is generally bad practice to release code with debugging print statements left in
    发布代码时遗留调试打印语句是不良编程习惯
 </code></pre>
 <p>答案为3<br>静默错误（返回错误结果却不崩溃）比程序直接崩溃危害更大：崩溃会立刻暴露问题，而错误输出会悄悄产生错误数据，难以察觉，从而造成更严重的后果。该说法完全错误。</p>
