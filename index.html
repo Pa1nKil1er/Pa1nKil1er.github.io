@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-CS61A-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/19/CS61A-1/" class="article-date">
+  <time class="dt-published" datetime="2026-07-19T12:30:36.000Z" itemprop="datePublished">2026-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/19/CS61A-1/">CS61A -1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Homework1 :Function,Control<br>question ：1，2</p>
+<p>Q1：a加上绝对值b<br>    def a_plus_abs_b(a, b):<br>    “””Return a+abs(b), but without calling abs.</p>
+<pre><code>&gt;&gt;&gt; a_plus_abs_b(2, 3)
+5
+&gt;&gt;&gt; a_plus_abs_b(2, -3)
+5
+&gt;&gt;&gt; a_plus_abs_b(-1, 4)
+3
+&gt;&gt;&gt; a_plus_abs_b(-1, -4)
+3
+&quot;&quot;&quot;
+
+if b &lt; 0:
+    f = sub
+else:
+    f = add
+return f(a, b)
+</code></pre>
+<p>本题可改动的地方只有f的赋值，明确f的赋值类型为函数便很简单了</p>
+<p>Q2:返回三者中最小两数的平方和<br>    def two_of_three(i, j, k):<br>    “””Return m<em>m + n</em>n, where m and n are the two smallest members of the<br>    positive numbers i, j, and k.</p>
+<pre><code>&gt;&gt;&gt; two_of_three(1, 2, 3)
+5
+&gt;&gt;&gt; two_of_three(5, 3, 1)
+10
+&gt;&gt;&gt; two_of_three(10, 2, 8)
+68
+&gt;&gt;&gt; two_of_three(5, 5, 5)
+50
+&quot;&quot;&quot;
+return i*i+j*j+k*k-max(i,j,k)*max(i,j,k)
+</code></pre>
+<p>解法原始且简单,lab01中也有与其思想类似的题目(_Q4)</p>
+<p>Lab01 Functions</p>
+<p>解开lock前的题目比较有意思</p>
+<pre><code>&gt;&gt;&gt; def welcome():
+...         print(&#39;Go&#39;)
+...         return &#39;hello&#39;
+&gt;&gt;&gt; def cal():
+...         print(&#39;Bears&#39;)
+...         return &#39;world&#39;
+&gt;&gt;&gt; welcome()
+</code></pre>
+<p>答案：<br>(line 1)? GO<br>(line 2)? ‘hello’<br>首先print直接打印 字符串Go,<br>而在交互终端，交互器会把函数返回值打印出来，所以还有原封不动的’hello’</p>
+<p>Q: In the following traceback, what is the most recent function call?<br>    Traceback (most recent call last):<br>    File “temp.py”, line 10, in <module><br>        f(“hi”)<br>    File “temp.py”, line 2, in f<br>        return g(x + x, x)<br>    File “temp.py”, line 5, in g<br>        return h(x + y * 5)<br>    File “temp.py”, line 8, in h<br>        return x + 0<br>    TypeError: must be str, not int<br>    Choose the number of the correct choice:<br>    1) f(“hi”)<br>    2) h(x + y * 5)<br>    3) g(x + x, x)<br>答案为 1<br>Traceback (most recent call last)<br>回溯信息（最后调用的函数放在末尾），可以认为回溯信息记录了整个调用流程</p>
+<p>debugging-quiz &gt; Suite 1 &gt; Case 2<br>(cases remaining: 6)</p>
+<pre><code>Q: In the following traceback, what is the cause of this error?
+Traceback (most recent call last):
+File &quot;temp.py&quot;, line 10, in &lt;module&gt;
+    f(&quot;hi&quot;)
+File &quot;temp.py&quot;, line 2, in f
+    return g(x + x, x)
+File &quot;temp.py&quot;, line 5, in g
+    return h(x + y * 5)
+File &quot;temp.py&quot;, line 8, in h
+    return x + 0
+TypeError: must be str, not int
+Choose the number of the correct choice:
+0) there was a missing return statement
+1) the code looped infinitely
+2) the code attempted to add a string to an integer
+</code></pre>
+<p>答案为2</p>
+<pre><code>Q: Which of the following is NOT true?
+Choose the number of the correct choice:
+3) It is generally good practice to release code with assertion statements left in
+   发布代码时保留断言语句通常是良好的编程习惯
+4) Debugging is not a substitute for testing
+   调试不能替代测试
+5) Code that returns a wrong answer instead of crashing is generally better as it at least works fine
+   代码返回错误答案而非直接崩溃一般更好，因为它至少能正常运行
+6) Testing is very important to ensure robust code
+   测试对于保障代码健壮性非常重要
+7) It is generally bad practice to release code with debugging print statements left in
+   发布代码时遗留调试打印语句是不良编程习惯
+</code></pre>
+<p>答案为3<br>静默错误（返回错误结果却不崩溃）比程序直接崩溃危害更大：崩溃会立刻暴露问题，而错误输出会悄悄产生错误数据，难以察觉，从而造成更严重的后果。该说法完全错误。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/07/19/CS61A-1/" data-id="cuidCqBvJzcbZtZD1BqDiltoc" data-title="CS61A -1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-first-try" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/21/my-first-try/" class="article-date">
+  <time class="dt-published" datetime="2026-05-21T14:03:35.000Z" itemprop="datePublished">2026-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/21/my-first-try/">my first try</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/21/my-first-try/" data-id="cuidr58rkjSWuhR6tLHE0uBkS" data-title="my first try" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/21/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-05-21T13:57:55.329Z" itemprop="datePublished">2026-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/21/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/21/hello-world/" data-id="cuidCWgEOt8FGeVEHPx8DlZ_q" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/19/CS61A-1/">CS61A -1</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/21/my-first-try/">my first try</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/21/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
