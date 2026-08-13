@@ -6,15 +6,15 @@
   
   <title>CS61A-2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="HW 02: Higher-Order Functions重点在于明确在python中函数一等元素的地位 QUESTION 21234567891011121314151617181920212223242526def accumulate(fuse, start, n, term):    &quot;&quot;&quot;Return the result of fusing togethe">
+  <meta name="description" content="我学了一点点md的技巧^^，可以优化之前的笔记了  HW 02: Higher-Order Functions重点在于明确在python中函数一等元素的地位 QUESTION 21234567891011121314151617181920212223242526def accumulate(fuse, start, n, term):    &quot;&quot;&quot;Return t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS61A-2">
 <meta property="og:url" content="http://example.com/2026/08/13/CS61A-2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HW 02: Higher-Order Functions重点在于明确在python中函数一等元素的地位 QUESTION 21234567891011121314151617181920212223242526def accumulate(fuse, start, n, term):    &quot;&quot;&quot;Return the result of fusing togethe">
+<meta property="og:description" content="我学了一点点md的技巧^^，可以优化之前的笔记了  HW 02: Higher-Order Functions重点在于明确在python中函数一等元素的地位 QUESTION 21234567891011121314151617181920212223242526def accumulate(fuse, start, n, term):    &quot;&quot;&quot;Return t">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-08-13T03:29:56.000Z">
-<meta property="article:modified_time" content="2026-08-13T06:21:57.213Z">
+<meta property="article:published_time" content="2026-08-13T06:44:26.000Z">
+<meta property="article:modified_time" content="2026-08-13T06:51:50.007Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -76,7 +76,7 @@
         <section id="main"><article id="post-CS61A-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/08/13/CS61A-2/" class="article-date">
-  <time class="dt-published" datetime="2026-08-13T03:29:56.000Z" itemprop="datePublished">2026-08-13</time>
+  <time class="dt-published" datetime="2026-08-13T06:44:26.000Z" itemprop="datePublished">2026-08-13</time>
 </a>
     
   </div>
@@ -95,7 +95,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="HW-02-Higher-Order-Functions"><a href="#HW-02-Higher-Order-Functions" class="headerlink" title="HW 02: Higher-Order Functions"></a>HW 02: Higher-Order Functions</h1><p><em>重点在于明确在python中函数一等元素的地位</em></p>
+        <blockquote>
+<p>我学了一点点md的技巧^^，可以优化之前的笔记了</p>
+</blockquote>
+<h1 id="HW-02-Higher-Order-Functions"><a href="#HW-02-Higher-Order-Functions" class="headerlink" title="HW 02: Higher-Order Functions"></a>HW 02: Higher-Order Functions</h1><p><em>重点在于明确在python中函数一等元素的地位</em></p>
 <h2 id="QUESTION-2"><a href="#QUESTION-2" class="headerlink" title="QUESTION 2"></a>QUESTION 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">fuse, start, n, term</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the result of fusing together the first n terms in a sequence </span></span><br><span class="line"><span class="string">    and start.  The terms to be fused are term(1), term(2), ..., term(n). </span></span><br><span class="line"><span class="string">    The function fuse is a two-argument commutative &amp; associative function.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accumulate(add, 0, 5, identity)  # 0 + 1 + 2 + 3 + 4 + 5</span></span><br><span class="line"><span class="string">    15</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accumulate(add, 11, 5, identity) # 11 + 1 + 2 + 3 + 4 + 5</span></span><br><span class="line"><span class="string">    26</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accumulate(add, 11, 0, identity) # 11 (fuse is never used)</span></span><br><span class="line"><span class="string">    11</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accumulate(add, 11, 3, square)   # 11 + 1^2 + 2^2 + 3^2</span></span><br><span class="line"><span class="string">    25</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accumulate(mul, 2, 3, square)    # 2 * 1^2 * 2^2 * 3^2</span></span><br><span class="line"><span class="string">    72</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; # 2 + (1^2 + 1) + (2^2 + 1) + (3^2 + 1)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accumulate(lambda x, y: x + y + 1, 2, 3, square)</span></span><br><span class="line"><span class="string">    19</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="built_in">sum</span>=start</span><br><span class="line">    <span class="keyword">while</span>(n&gt;=<span class="number">1</span>):</span><br><span class="line">        <span class="comment">#fuse(sum,(term(n)))   这里我犯傻了QAQ</span></span><br><span class="line">        <span class="built_in">sum</span>=fuse(<span class="built_in">sum</span>,(term(n)))</span><br><span class="line">        n-=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>    </span><br></pre></td></tr></table></figure>
 
 <h2 id="QUESTION-4"><a href="#QUESTION-4" class="headerlink" title="QUESTION 4"></a>QUESTION 4</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">product_using_accumulate</span>(<span class="params">n, term</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Returns the product: term(1) * ... * term(n), using accumulate.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; product_using_accumulate(4, square) # square(1) * square(2) * square(3) * square()</span></span><br><span class="line"><span class="string">    576</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; product_using_accumulate(6, triple) # triple(1) * triple(2) * ... * triple(5) * triple(6)</span></span><br><span class="line"><span class="string">    524880</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; # This test checks that the body of the function is just a return statement.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; import inspect, ast</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; [type(x).__name__ for x in ast.parse(inspect.getsource(product_using_accumulate)).body[0].body]</span></span><br><span class="line"><span class="string">    [&#x27;Expr&#x27;, &#x27;Return&#x27;]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> accumulate(mul,<span class="number">1</span>,n,term)</span><br><span class="line">    <span class="comment">#一等元素函数，可以直接作为函数的结果返回，正因如此可以进行下面的闭包操作</span></span><br></pre></td></tr></table></figure>
@@ -110,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/08/13/CS61A-2/" data-id="cuid1Qry2BOoIa2N8H_qZjptK" data-title="CS61A-2" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/08/13/CS61A-2/" data-id="cuidyhMlMZsTjOLitnQezB496" data-title="CS61A-2" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
