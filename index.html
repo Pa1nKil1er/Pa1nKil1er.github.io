@@ -102,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/09/03/%E5%A4%A7%E4%BA%8C%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F/" data-id="cuid3u_HsjaRirmWXSHlMOR7e" data-title="大二第一学期" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/09/03/%E5%A4%A7%E4%BA%8C%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F/" data-id="cuidvzoGdyGWI8TB-EoCl7pRu" data-title="大二第一学期" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -153,7 +153,7 @@
 </code></pre>
 <h2 id="关于hog-py"><a href="#关于hog-py" class="headerlink" title="关于hog.py"></a>关于hog.py</h2><p><em>(F意味着已给定函数)</em></p>
 <blockquote>
-<p>阶段一<br>Q1.roll_dice 实现规则2<br>Q2.boar_brawl 实现规则3<br>Q3.take_turn 给出每回合的得分，需要利用上面两个函数<br>F4.simple_update 计算出该回合结束后玩家的总分数(不考虑规则4)<br>F5.is_prime 判断是否是质数<br>Q4.num_factors 计算该数有几个因数<br>Q4.sus_points 将sus数按规则4变化<br>Q4.sus_update 计算出该回合结束后玩家的总分数(考虑规则4)<br>F5.always_roll_5 策略函数：假定每个回合都掷5枚骰子。——总是返回5<br>Q5.play 游玩过程<br>阶段二:策略<br>策略函数默认为双参:双方目前分数，然后返回骰子个数<br>    Q6.always_roll(n) 策略函数：每个回合都掷n枚骰子<br>    F6.catch_up 策略函数：当分数落后于对方时掷6枚骰子，否则掷5枚骰子<br>    Q7.is_always_roll 判定函数是否是Q6型函数<br>        被难到了————看了ai发现要用暴力遍历————总是卡在这种思路，，郁闷<br>    Q8.make_averaged  一个平均值机器，返回函数参数在次数下的平均值<br>    Q9.max_scoring_num_rolls</p>
+<p>阶段一<br>Q1.roll_dice 实现规则2<br>Q2.boar_brawl 实现规则3<br>Q3.take_turn 给出每回合的得分，需要利用上面两个函数<br>F1.simple_update 计算出该回合结束后玩家的总分数(不考虑规则4)<br>F2.is_prime 判断是否是质数<br>Q4.num_factors 计算该数有几个因数<br>Q4.sus_points 将sus数按规则4变化<br>Q4.sus_update 计算出该回合结束后玩家的总分数(考虑规则4)<br>F3.always_roll_5 策略函数：假定每个回合都掷5枚骰子。——总是返回5<br>Q5.play 游玩过程<br>阶段二:策略<br>策略函数默认为双参:双方目前分数，然后返回骰子个数<br>    Q6.always_roll(n) 策略函数：每个回合都掷n枚骰子<br>    F4.catch_up 策略函数：当分数落后于对方时掷6枚骰子，否则掷5枚骰子<br>    Q7.is_always_roll 判定函数是否是Q6型函数<br>        被难到了————看了ai发现要用暴力遍历————总是卡在这种思路，，郁闷<br>    Q8.make_averaged  一个平均值机器，返回函数参数在次数下的平均值<br>    Q9.max_scoring_num_rolls 计算掷骰子1-10中平均值最大的是几<br>    F5.winner 给出play(Q5)后赢家是谁<br>    F6.average_win_rate 计算玩家作为player0和1和胜率平均值(没看懂)<br>    F7.run_experiments 策略实验，打印出各种策略下的胜率，可见掷6个骰子胜率最高<br>    Q10.boar_strategy 策略函数，判断是否该使用野猪冲击<br>    Q11.sus_strategy sus规则下的野猪合理性(注意是新增分数加上去之后再进行sus规则)<br>    Q12.final_strategy 最后集合上面的函数，思考游戏中如何选出最佳策略</p>
 </blockquote>
 <h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><ol>
 <li>9&#x2F;2在problem8上卡了快两小时，，但是感觉有很多收获，不过没有整理吸收的话就只能剩下这门课真厉害的感想了。</li>
@@ -184,11 +184,12 @@
         return sum/times_called
     return f
 </code></pre>
+<p>![](D:\Blog\source_images\屏幕截图 2026-09-06 105700.png)<br>![结束](..&#x2F;_images&#x2F;屏幕截图 2026-09-06 105700.png)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/08/14/CS61A-HOG/" data-id="cuidw-zXBuyFVE-kSfnRZF6w1" data-title="CS61A-HOG" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/08/14/CS61A-HOG/" data-id="cuidAfQJU25DdMTdw-a63iq3x" data-title="CS61A-HOG" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -245,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/08/13/CS61A-2/" data-id="cuidwevfJwvm4BfJjW5TBdq87" data-title="CS61A-2" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/08/13/CS61A-2/" data-id="cuidxzQPE_7v1h-UCcTodroLE" data-title="CS61A-2" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -296,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/07/19/CS61A-1/" data-id="cuid0inZjkyTesgk1IFory4f7" data-title="CS61A -1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/07/19/CS61A-1/" data-id="cuidMF3Rf3MWpNZ242nQfwu5u" data-title="CS61A -1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -337,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/21/my-first-try/" data-id="cuidcvyua3kL6ZuenV5jI1WpZ" data-title="my first try" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/21/my-first-try/" data-id="cuidKLqWW2R7ps0aTL5B55kXz" data-title="my first try" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -388,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/21/hello-world/" data-id="cuideXgRY710N5m8CMqKfVC8e" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/21/hello-world/" data-id="cuidHuC_BCcH-cTrJPRDlTzbc" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
